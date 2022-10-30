@@ -39,7 +39,8 @@ def predict():
 
     # output = round(prediction[0], 2)
     output = predict_price(location1, sqf1, bathrooms1, bhk1)
-    return render_template('index.html', prediction_text='House price would be $ {}'.format(output))
+    out = round(output, 2)
+    return render_template('index.html', prediction_text='House price would be {} IND Lakhs'.format(out))
 
 
 if __name__ == "__main__":
