@@ -4280,7 +4280,8 @@ body, html {
 
 </head>
 
-<body>
+<body style="background-image: url({{ url_for('static', filename = '/images/bg.jpg')}});">
+
 <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
@@ -4304,13 +4305,13 @@ body, html {
       <div class="row">
         <div class="col-lg-6 align-self-center" style="float: left; width: 50%">
           <div >
-	<h2 style="center">Predict House Price</h2>
+	<h2 style="padding-left: 75px;">REAL ESTATE PRICE PREDICTION</h2>
               <br>
 
      <!-- Main Input For Receiving Query to our ML -->
-        <form action="{{ url_for('predict')}}" method="post">
+        <form action="{{ url_for('predict')}}" method="post" style="padding-left: 75px;">
             <h3>Location</h3>
-            <select id="select" onchange="ddlselect();">
+            <select id="select" onchange="ddlselect();" >
                 <option value="location" >Select Location</option>
             </select>
             <script>
@@ -4345,7 +4346,7 @@ body, html {
             </div>
 
 
-            <br><br><h3>Number of Bathrooms</h3><br>
+            <br><h3>Number of Bathrooms</h3><br>
             <div>
                 <input type="radio" name="bhk" value="1"/> <label>1</label>
                 <input type="radio" name="bhk" value="2" checked/> <label>2</label>
@@ -4355,22 +4356,22 @@ body, html {
             </div>
             <br>
             <button type="submit" class="btn btn-primary btn-block btn-large" onclick="getOption()" style="width: 225px; height:25px; background-color:#ccff99; border: 2px solid #4CAF50;">Predict</button>
-        </form>
-</div>
-
-   <br>
-   <br>
+        <br><br>
             <div style="background-color:#e6ff99; width:90%; height:70%; border: 2px solid #e6ff99;">
    {{ prediction_text }}
                 </div>
 
+        </form>
+
+
+</div>
  </div>
           </div>
               </div>
             <div class="col-lg-6" style="float: right; width: 50%">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
               <img src= "{{ url_for('static', filename='images/house.png') }}" alt="team meeting"
-                   style="height:490px;width:490px;">
+                   style="height:520px;width:520px;">
               </div>
               </div>
           </div>
